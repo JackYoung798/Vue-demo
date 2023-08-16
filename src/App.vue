@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <el-button>go</el-button>
+    <RouterView></RouterView>
   </div>
 </template>
 
