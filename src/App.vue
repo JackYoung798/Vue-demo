@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-  <div></div>
+  <div>
+    <el-button>go</el-button>
+  </div>
 </template>
 
 <style scoped></style>
