@@ -1,6 +1,7 @@
 # Vue3-demo
 
-This template should help get you started developing with Vue 3 in Vite.
+实践开发Vue3项目  
+[Vue3](https://cn.vuejs.org/)
 
 ## Technology
 [pinia](https://pinia.web3doc.top/) + [axios](https://www.axios-http.cn/) + [element ui](https://element-plus.org/zh-CN/)
