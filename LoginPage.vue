@@ -108,12 +108,23 @@ watch(isRegister, () => {
     <el-col :span="12" class="bg"></el-col>
     <el-col :span="6" :offset="3" class="form">
       <!-- 注册相关表单 -->
-      <el-form :model="formModel" :rules="rules" ref="form" size="large" autocomplete="off" v-if="isRegister">
+      <el-form
+        :model="formModel"
+        :rules="rules"
+        ref="form"
+        size="large"
+        autocomplete="off"
+        v-if="isRegister"
+      >
         <el-form-item>
           <h1>注册</h1>
         </el-form-item>
         <el-form-item prop="username">
-          <el-input v-model="formModel.username" :prefix-icon="User" placeholder="请输入用户名"></el-input>
+          <el-input
+            v-model="formModel.username"
+            :prefix-icon="User"
+            placeholder="请输入用户名"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="password">
           <el-input
@@ -132,20 +143,40 @@ watch(isRegister, () => {
           ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button @click="register" class="button" type="primary" auto-insert-space> 注册 </el-button>
+          <el-button
+            @click="register"
+            class="button"
+            type="primary"
+            auto-insert-space
+          >
+            注册
+          </el-button>
         </el-form-item>
         <el-form-item class="flex">
-          <el-link type="info" :underline="false" @click="isRegister = false"> ← 返回 </el-link>
+          <el-link type="info" :underline="false" @click="isRegister = false">
+            ← 返回
+          </el-link>
         </el-form-item>
       </el-form>
 
       <!-- 登录相关表单 -->
-      <el-form :model="formModel" :rules="rules" ref="form" size="large" autocomplete="off" v-else>
+      <el-form
+        :model="formModel"
+        :rules="rules"
+        ref="form"
+        size="large"
+        autocomplete="off"
+        v-else
+      >
         <el-form-item>
           <h1>登录</h1>
         </el-form-item>
         <el-form-item prop="username">
-          <el-input v-model="formModel.username" :prefix-icon="User" placeholder="请输入用户名"></el-input>
+          <el-input
+            v-model="formModel.username"
+            :prefix-icon="User"
+            placeholder="请输入用户名"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="password">
           <el-input
@@ -163,10 +194,18 @@ watch(isRegister, () => {
           </div>
         </el-form-item>
         <el-form-item>
-          <el-button @click="login" class="button" type="primary" auto-insert-space>登录</el-button>
+          <el-button
+            @click="login"
+            class="button"
+            type="primary"
+            auto-insert-space
+            >登录</el-button
+          >
         </el-form-item>
         <el-form-item class="flex">
-          <el-link type="info" :underline="false" @click="isRegister = true"> 注册 → </el-link>
+          <el-link type="info" :underline="false" @click="isRegister = true">
+            注册 →
+          </el-link>
         </el-form-item>
       </el-form>
     </el-col>
