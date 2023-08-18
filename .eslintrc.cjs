@@ -27,5 +27,10 @@ module.exports = {
         endOfLine: 'auto'
       }
     ]
+  },
+  globals: {
+    ElMessage: 'readonly',
+    ElMessageBox: 'readonly',
+    ElLoading: 'readonly'
   }
 }
