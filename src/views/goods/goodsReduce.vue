@@ -1,0 +1,1 @@
+<template>reduce</template>

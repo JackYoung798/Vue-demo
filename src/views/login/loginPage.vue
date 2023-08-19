@@ -18,7 +18,7 @@ const rules = {
     {
       min: 5,
       max: 11,
-      message: '用户名必须是 5-10位 的字符',
+      message: '用户名必须是 5-11位 的字符',
       trigger: 'change'
     }
   ],
@@ -80,8 +80,8 @@ watch(status, () => {
 
 <template>
   <el-row class="login-page">
-    <el-col :span="12" class="bg"></el-col>
-    <el-col :span="6" :offset="3" class="form">
+    <el-col :span="16" class="bg"></el-col>
+    <el-col :span="6" :offset="1" class="form">
       <!-- 登录表单 -->
       <el-form
         v-if="status"

@@ -5,7 +5,6 @@ import router from '@/router'
 const baseURL = 'http://big-event-vue-api-t.itheima.net'
 
 const instance = axios.create({
-  // TODO 1. 基础地址，超时时间
   baseURL,
   timeout: 10000
 })
