@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import { useUserStore } from '@/stores'
+import { useUserStore } from '@/stores'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -22,12 +22,12 @@ const router = createRouter({
           component: () => import('@/views/goods/goodsReduce.vue')
         },
         {
-          path: '/goods/details',
-          component: () => import('@/views/goods/goodsDetails.vue')
+          path: '/user/userMessage',
+          component: () => import('@/views/user/userMessage.vue')
         },
         {
-          path: '/user/userMessdge',
-          component: () => import('@/views/user/userMessage.vue')
+          path: '/user/reAvatar',
+          component: () => import('@/views/user/reAvatar.vue')
         },
         {
           path: '/user/rePassword',
@@ -40,10 +40,10 @@ const router = createRouter({
   ]
 })
 
-// router.beforeEach((to) => {
-//   const useStore = useUserStore()
-//   if (!useStore.token && to.path !== '/login') return '/login'
-//   return true
-// })
+router.beforeEach((to) => {
+  const useStore = useUserStore()
+  if (!useStore.token && to.path !== '/login') return '/login'
+  return true
+})
 
 export default router

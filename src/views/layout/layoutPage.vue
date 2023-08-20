@@ -74,9 +74,13 @@ const handleCommand = async (key) => {
             <span>个人中心</span>
           </template>
           <!-- 展开的内容 - 默认插槽 -->
-          <el-menu-item index="/user/userMessdge">
+          <el-menu-item index="/user/userMessage">
             <el-icon><User /></el-icon>
             <span>基本资料</span>
+          </el-menu-item>
+          <el-menu-item index="/user/reAvatar">
+            <el-icon><User /></el-icon>
+            <span>更换头像</span>
           </el-menu-item>
           <el-menu-item index="/user/rePassword">
             <el-icon><EditPen /></el-icon>
@@ -105,10 +109,10 @@ const handleCommand = async (key) => {
               <el-dropdown-item command="userMessage" :icon="User"
                 >基本资料</el-dropdown-item
               >
-              <el-dropdown-item command="avatar" :icon="Crop"
+              <el-dropdown-item command="reAvatar" :icon="Crop"
                 >更换头像</el-dropdown-item
               >
-              <el-dropdown-item command="password" :icon="EditPen"
+              <el-dropdown-item command="rePassword" :icon="EditPen"
                 >重置密码</el-dropdown-item
               >
               <el-dropdown-item command="logout" :icon="SwitchButton"

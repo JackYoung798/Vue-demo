@@ -1,5 +1,5 @@
 {
-  "name": "vue3-demo",
+  "name": "vms-demo",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -14,6 +14,7 @@
     "axios": "^1.4.0",
     "element-plus": "^2.3.9",
     "pinia": "^2.1.4",
+    "request": "^2.88.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },
