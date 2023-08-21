@@ -1,6 +1,6 @@
-# Vue3-demo项目
+# VMS-demo
 
-基于V[Vue3](https://cn.vuejs.org/)框架开发的仓库管理系统(VMS, Warehouse Management System)
+基于[Vue3](https://cn.vuejs.org/)框架开发的仓库管理系统(VMS, Warehouse Management System)
 
  
 ## 技术栈
