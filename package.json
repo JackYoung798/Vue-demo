@@ -12,6 +12,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
     "axios": "^1.4.0",
+    "echarts": "^5.4.3",
     "element-plus": "^2.3.9",
     "pinia": "^2.1.4",
     "request": "^2.88.2",

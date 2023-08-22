@@ -80,7 +80,18 @@ watch(status, () => {
 
 <template>
   <el-row class="login-page">
-    <el-col :span="16" class="bg"></el-col>
+    <el-col :span="16" class="bg">
+      <el-carousel
+        height="100vh"
+        direction="vertical"
+        type="card"
+        :autoplay="true"
+      >
+        <el-carousel-item v-for="item in 4" :key="item">
+          <h3 text="2xl" justify="center">{{ item }}</h3>
+        </el-carousel-item>
+      </el-carousel></el-col
+    >
     <el-col :span="6" :offset="1" class="form">
       <!-- 登录表单 -->
       <el-form
@@ -199,8 +210,22 @@ watch(status, () => {
   background-color: #fff;
 }
 .bg {
-  background-color: rgb(88, 86, 140);
-  border-radius: 0 20px 20px 0;
+  /* background-color: rgb(88, 86, 140); */
+  background-color: #fff;
+  border-radius: 20px;
+}
+.el-carousel__item h3 {
+  color: #475669;
+  opacity: 0.75;
+  line-height: 50vh;
+  margin: 0;
+  text-align: center;
+}
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
 }
 .form {
   display: flex;
