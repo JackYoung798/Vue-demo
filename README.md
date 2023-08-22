@@ -1,10 +1,10 @@
-# Vue3-demo项目
+# VMS-demo
 
-实践开发[Vue3](https://cn.vuejs.org/)项目  
+基于[Vue3](https://cn.vuejs.org/)框架开发的仓库管理系统(VMS, Warehouse Management System)
 
-
-## 技术支持
-[pinia](https://pinia.web3doc.top/) + [axios](https://www.axios-http.cn/) + [element plus](https://element-plus.org/zh-CN/)
+ 
+## 技术栈
+[Vue Router](https://router.vuejs.org/zh/) + [axios](https://www.axios-http.cn/) + [pinia](https://pinia.web3doc.top/) + [element plus](https://element-plus.org/zh-CN/)
 
 
 ## 前端工具链
