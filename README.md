@@ -4,7 +4,7 @@
 
  
 ## 技术栈
-[Vue Router](https://router.vuejs.org/zh/) + [axios](https://www.axios-http.cn/) + [pinia](https://pinia.web3doc.top/) + [element plus](https://element-plus.org/zh-CN/)
+[Vue Router](https://router.vuejs.org/zh/) + [axios](https://www.axios-http.cn/) + [pinia](https://pinia.web3doc.top/) + [element plus](https://element-plus.org/zh-CN/) + [Echarts](https://echarts.apache.org/zh/index.html)
 
 
 ## 前端工具链
