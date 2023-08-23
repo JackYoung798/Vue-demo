@@ -14,12 +14,12 @@ const router = createRouter({
           component: () => import('@/views/goods/goodsDetails.vue')
         },
         {
-          path: '/goods/goodsAdd',
-          component: () => import('@/views/goods/goodsAdd.vue')
+          path: '/goods/goodsManage',
+          component: () => import('@/views/goods/goodsManage.vue')
         },
         {
-          path: '/goods/goodsReduce',
-          component: () => import('@/views/goods/goodsReduce.vue')
+          path: '/goods/goodsList',
+          component: () => import('@/views/goods/goodsList.vue')
         },
         {
           path: '/user/userMessage',

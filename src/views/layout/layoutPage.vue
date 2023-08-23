@@ -2,13 +2,12 @@
 import {
   Management,
   UserFilled,
-  User,
-  Crop,
   EditPen,
   SwitchButton,
   CaretBottom,
-  FolderAdd,
-  FolderRemove
+  List,
+  Avatar,
+  TrendCharts
 } from '@element-plus/icons-vue'
 import avatar from '@/assets/default.png'
 import { useUserStore } from '@/stores'
@@ -55,16 +54,16 @@ const handleCommand = async (key) => {
         router
       >
         <el-menu-item index="/goods/details">
-          <el-icon><Management /></el-icon>
+          <el-icon><TrendCharts /></el-icon>
           <span>仓库详情</span>
         </el-menu-item>
-        <el-menu-item index="/goods/goodsAdd">
-          <el-icon><FolderAdd /></el-icon>
-          <span>入库管理</span>
+        <el-menu-item index="/goods/goodsList">
+          <el-icon><List /></el-icon>
+          <span>仓库列表</span>
         </el-menu-item>
-        <el-menu-item index="/goods/goodsReduce">
-          <el-icon><FolderRemove /></el-icon>
-          <span>出库管理</span>
+        <el-menu-item index="/goods/goodsManage">
+          <el-icon><Management /></el-icon>
+          <span>仓库管理</span>
         </el-menu-item>
 
         <el-sub-menu index="/user">
@@ -75,11 +74,11 @@ const handleCommand = async (key) => {
           </template>
           <!-- 展开的内容 - 默认插槽 -->
           <el-menu-item index="/user/userMessage">
-            <el-icon><User /></el-icon>
+            <el-icon><UserFilled /></el-icon>
             <span>基本资料</span>
           </el-menu-item>
           <el-menu-item index="/user/reAvatar">
-            <el-icon><User /></el-icon>
+            <el-icon><Avatar /></el-icon>
             <span>更换头像</span>
           </el-menu-item>
           <el-menu-item index="/user/rePassword">
@@ -92,7 +91,7 @@ const handleCommand = async (key) => {
     <el-container>
       <el-header>
         <div>
-          管理员：<strong>{{
+          仓库管理员：<strong>{{
             userStore.user.nickname || userStore.user.username
           }}</strong>
         </div>
@@ -106,10 +105,10 @@ const handleCommand = async (key) => {
           <!-- 折叠的下拉部分 -->
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item command="userMessage" :icon="User"
+              <el-dropdown-item command="userMessage" :icon="UserFilled"
                 >基本资料</el-dropdown-item
               >
-              <el-dropdown-item command="reAvatar" :icon="Crop"
+              <el-dropdown-item command="reAvatar" :icon="Avatar"
                 >更换头像</el-dropdown-item
               >
               <el-dropdown-item command="rePassword" :icon="EditPen"
@@ -125,7 +124,7 @@ const handleCommand = async (key) => {
       <el-main>
         <router-view></router-view>
       </el-main>
-      <el-footer>仓库管理系统 ©2023 Created by YOUNG</el-footer>
+      <!-- <el-footer>仓库管理系统 ©2023 Created by YOUNG</el-footer> -->
     </el-container>
   </el-container>
 </template>
