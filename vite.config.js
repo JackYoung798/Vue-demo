@@ -21,5 +21,16 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://123.57.241.62:8080/', // 后端接口
+        changeOrigin: true, // 是否跨域
+        pathRewrite: {
+          '/api': ''
+        }
+      }
+    }
   }
 })

@@ -16,7 +16,7 @@ const rules = {
   username: [
     { required: true, message: '请输入用户名', trigger: 'change' },
     {
-      min: 5,
+      min: 0,
       max: 11,
       message: '用户名必须是 5-11位 的字符',
       trigger: 'change'
@@ -25,7 +25,7 @@ const rules = {
   password: [
     { required: true, message: '请输入密码', trigger: 'change' },
     {
-      pattern: /^\S{6,15}$/,
+      pattern: /^\S{0,15}$/,
       message: '密码必须是 6-15位 的非空字符',
       trigger: 'change'
     }
