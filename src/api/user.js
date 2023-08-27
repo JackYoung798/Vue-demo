@@ -2,20 +2,18 @@ import request from '@/utils/request'
 
 // 注册接口
 export const userRegisterService = ({ username, password }) =>
-  // request.post('/api/reg', { username, password, repassword })
   request.post('/user/register', { username, password })
 
 // 登录接口
 export const userLoginService = ({ username, password }) =>
-  // request.post('/api/login', { username, password })
   request.post('/user/login', { username, password })
 
 // 获取用户基本信息
-export const userGetInfoService = () => request.get('/my/userinfo')
+export const userGetInfoService = () => request.get('/user/userinfo')
 
 // 更新用户基本信息
-export const userUpdateInfoService = ({ id, nickname, email }) =>
-  request.put('/my/userinfo', { id, nickname, email })
+export const userUpdateInfoService = ({ username, nickname, email }) =>
+  request.put('/user/userinfo', { username, nickname, email })
 
 // 更新用户头像
 export const userUpdateAvatarService = (avatar) =>

@@ -1,7 +1,3 @@
-<script setup>
-import axios from 'axios'
-const res = axios.get('http://localhost:8080/hello')
-console.log(res)
-</script>
+<script setup></script>
 
 <template>还没写</template>

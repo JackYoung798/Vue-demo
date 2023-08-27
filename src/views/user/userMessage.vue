@@ -6,14 +6,12 @@ import { userUpdateInfoService } from '@/api/user'
 
 const formRef = ref()
 
-// 是在使用仓库中数据的初始值 (无需响应式) 解构无问题
 const {
-  user: { email, id, nickname, username },
+  user: { username, nickname, email },
   getUser
 } = useUserStore()
 
 const form = ref({
-  id,
   username,
   nickname,
   email
@@ -21,7 +19,7 @@ const form = ref({
 
 const rules = ref({
   nickname: [
-    { required: true, message: '请输入用户昵称', trigger: 'blur' },
+    { required: true, message: '请输入用户昵称', trigger: 'change' },
     {
       pattern: /^\S{2,10}/,
       message: '昵称长度在2-10个非空字符',
@@ -29,7 +27,7 @@ const rules = ref({
     }
   ],
   email: [
-    { required: true, message: '请输入用户邮箱', trigger: 'blur' },
+    { required: true, message: '请输入用户邮箱', trigger: 'change' },
     {
       type: 'email',
       message: '请输入正确的邮箱格式',
@@ -39,13 +37,9 @@ const rules = ref({
 })
 
 const submitForm = async () => {
-  // 等待校验结果
   await formRef.value.validate()
-  // 提交修改
   await userUpdateInfoService(form.value)
-  // 通知 user 模块，进行数据的更新
   getUser()
-  // 提示用户
   ElMessage.success('修改成功')
 }
 </script>

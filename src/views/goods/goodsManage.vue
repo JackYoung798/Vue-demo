@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import { goodsInboundservice } from '@/api/manage.js'
 
 const formModel = ref({
   name: '',
@@ -12,11 +13,13 @@ const formModel = ref({
 })
 const activeName = ref('first')
 
-const submit = async () => {
+//入库操作
+const inbound = async () => {
   await form.value.validate()
+  await goodsInboundservice()
   ElMessage.success('新增成功')
 }
-
+//取消操作
 const cancel = () => {
   formModel.value = {
     name: '',
@@ -108,7 +111,7 @@ const rules = {
           </el-form-item>
 
           <el-form-item>
-            <el-button type="primary" @click="submit">新增入库</el-button>
+            <el-button type="primary" @click="inbound">新增入库</el-button>
             <el-button @click="cancel">取消操作</el-button>
           </el-form-item>
         </el-form>
