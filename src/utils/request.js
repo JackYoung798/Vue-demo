@@ -13,7 +13,6 @@ const instance = axios.create({
 // 请求拦截器
 instance.interceptors.request.use(
   (config) => {
-    // TODO 2. 携带token
     const useStore = useUserStore()
     if (useStore.token) {
       config.headers.Authorization = useStore.token
@@ -26,11 +25,11 @@ instance.interceptors.request.use(
 // 响应拦截器
 instance.interceptors.response.use(
   (res) => {
-    // TODO 4. 摘取核心响应数据
+    //摘取核心响应数据
     if (res.data.code === 20000) {
-      return res
+      return res.data
     }
-    // TODO 3. 处理业务失败
+    //处理业务失败
     // 处理业务失败, 给错误提示，抛出错误
     ElMessage.error(res.data.message || '服务异常')
     return Promise.reject(res.data)

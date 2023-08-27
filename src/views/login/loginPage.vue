@@ -7,8 +7,8 @@ import { useRouter } from 'vue-router'
 const status = ref(true)
 const formModel = ref({
   username: '',
-  password: '',
-  repassword: ''
+  password: ''
+  // repassword: ''
 })
 const form = ref()
 
@@ -29,36 +29,37 @@ const rules = {
       message: '密码必须是 6-15位 的非空字符',
       trigger: 'change'
     }
-  ],
-  repassword: [
-    { required: true, message: '请输入密码', trigger: 'change' },
-    {
-      pattern: /^\S{6,15}$/,
-      message: '密码必须是 6-15位 的非空字符',
-      trigger: 'change'
-    },
-    {
-      validator: (rule, value, callback) => {
-        // 判断 value 和 当前 form 中收集的 password 是否一致
-        if (value !== formModel.value.password) {
-          callback(new Error('两次输入密码不一致'))
-        } else {
-          callback() // 就算校验成功，也需要callback
-        }
-      },
-      trigger: 'blur'
-    }
   ]
+  // repassword: [
+  //   { required: true, message: '请输入密码', trigger: 'change' },
+  //   {
+  //     pattern: /^\S{6,15}$/,
+  //     message: '密码必须是 6-15位 的非空字符',
+  //     trigger: 'change'
+  //   },
+  //   {
+  //     validator: (rule, value, callback) => {
+  //       // 判断 value 和 当前 form 中收集的 password 是否一致
+  //       if (value !== formModel.value.password) {
+  //         callback(new Error('两次输入密码不一致'))
+  //       } else {
+  //         callback() // 就算校验成功，也需要callback
+  //       }
+  //     },
+  //     trigger: 'blur'
+  //   }
+  // ]
 }
 
+//注册
 const register = async () => {
-  // 注册成功之前，先进行校验，校验成功 → 请求，校验失败 → 自动提示
   await form.value.validate()
   await userRegisterService(formModel.value)
   ElMessage.success('注册成功')
   status.value = false
 }
 
+//登录
 const userStore = useUserStore()
 const router = useRouter()
 const login = async () => {
@@ -74,8 +75,8 @@ const login = async () => {
 watch(status, () => {
   formModel.value = {
     username: '',
-    password: '',
-    repassword: ''
+    password: ''
+    // repassword: ''
   }
 })
 </script>
@@ -174,7 +175,7 @@ watch(status, () => {
             placeholder="请输入密码"
           ></el-input>
         </el-form-item>
-        <el-form-item label="确认密码" prop="repassword">
+        <!-- <el-form-item label="确认密码" prop="repassword">
           <el-input
             :prefix-icon="Lock"
             v-model="formModel.repassword"
@@ -182,7 +183,7 @@ watch(status, () => {
             show-password
             placeholder="请确认密码"
           ></el-input>
-        </el-form-item>
+        </el-form-item> -->
         <el-form-item>
           <el-button
             @click="register"
