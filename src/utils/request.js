@@ -29,7 +29,7 @@ instance.interceptors.response.use(
       return res.data
     }
     // 处理业务失败, 给错误提示，抛出错误
-    ElMessage.error(res.data.message || '服务异常')
+    ElMessage.error(res.data.msg || '服务异常')
     return Promise.reject(res.data)
   },
   (err) => {
@@ -39,7 +39,7 @@ instance.interceptors.response.use(
     }
 
     // 错误的默认情况 => 只要给提示
-    ElMessage.error(err.response.data.message || '服务异常')
+    ElMessage.error(err.response.data.msg || '服务异常')
     return Promise.reject(err)
   }
 )

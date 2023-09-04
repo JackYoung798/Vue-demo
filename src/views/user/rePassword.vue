@@ -52,12 +52,9 @@ const submitForm = async () => {
   await userUpdatePasswordService(pwdForm.value)
   ElMessage.success('密码修改成功')
 
-  // 密码修改成功后，退出重新登录
-  // 清空本地存储的 token 和 个人信息
+  // 清空本地存储信息，退出重新登录
   userStore.setToken('')
   userStore.setUser({})
-
-  // 拦截登录
   router.push('/login')
 }
 

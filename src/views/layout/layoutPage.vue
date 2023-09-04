@@ -131,7 +131,7 @@ const handleCommand = async (key) => {
 
 <style scoped>
 .layout-container {
-  height: 100vh;
+  height: 98vh;
   .el-aside {
     background-color: #232323;
     .logo {
@@ -162,12 +162,12 @@ const handleCommand = async (key) => {
       }
     }
   }
-  .el-footer {
+  /* .el-footer {
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
     color: #666;
-  }
+  } */
 }
 </style>
