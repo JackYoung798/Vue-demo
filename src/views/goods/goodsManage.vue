@@ -1,36 +1,20 @@
 <script setup>
 import { ref } from 'vue'
-import { goodsInboundservice } from '@/api/manage.js'
-
+import { goodsInboundservice } from '@/api/goods.js'
+import { useUserStore } from '@/stores'
+const userStore = useUserStore()
 const formModel = ref({
   name: '',
   region: '',
   num: 1,
-  date1: '',
-  date2: '',
-  condition: '',
-  desc: ''
+  price: 0,
+  // date: '',
+  zt: '',
+  text: '',
+  username: userStore.user.username
 })
 const activeName = ref('first')
 
-//入库操作
-const inbound = async () => {
-  await form.value.validate()
-  await goodsInboundservice()
-  ElMessage.success('新增成功')
-}
-//取消操作
-const cancel = () => {
-  formModel.value = {
-    name: '',
-    category: '',
-    num: 1,
-    date1: '',
-    date2: '',
-    condition: '',
-    desc: ''
-  }
-}
 const form = ref() //配置校验规则
 const rules = {
   name: [{ required: true, message: '请输入商品名称', trigger: 'change' }],
@@ -43,8 +27,34 @@ const rules = {
       trigger: 'change'
     }
   ],
-  date: [{ required: true, message: '请选择日期', trigger: 'change' }],
-  condition: [{ required: true, message: '请选择商品类别', trigger: 'change' }]
+  price: [
+    {
+      required: true,
+      pattern: /^[0-9]\d*$/,
+      message: '请正确输入商品单价',
+      trigger: 'change'
+    }
+  ],
+  // date: [{ required: true, message: '请选择日期', trigger: 'change' }],
+  zt: [{ required: true, message: '请选择商品类别', trigger: 'change' }]
+}
+
+//入库操作
+const inbound = async () => {
+  await form.value.validate()
+  await goodsInboundservice(formModel.value)
+  ElMessage.success('新增成功')
+}
+//取消操作
+const cancel = () => {
+  formModel.value = {
+    name: '',
+    category: '',
+    num: 1,
+    // date: '',
+    zt: '',
+    text: ''
+  }
 }
 </script>
 
@@ -68,12 +78,12 @@ const rules = {
               v-model="formModel.category"
               placeholder="请选择商品类别"
             >
-              <el-option label="家电类" value="shanghai" />
-              <el-option label="数码类" value="beijing" />
-              <el-option label="服饰类" value="beijing" />
-              <el-option label="医药类" value="beijing" />
-              <el-option label="食品类" value="beijing" />
-              <el-option label="图书类" value="beijing" />
+              <el-option label="家电类" value="家电类" />
+              <el-option label="数码类" value="数码类" />
+              <el-option label="服饰类" value="服饰类" />
+              <el-option label="医药类" value="医药类" />
+              <el-option label="食品类" value="食品类" />
+              <el-option label="图书类" value="图书类" />
             </el-select>
           </el-form-item>
 
@@ -81,33 +91,28 @@ const rules = {
             <el-input-number v-model="formModel.num" />
           </el-form-item>
 
-          <el-form-item label="入库时间" prop="date">
-            <el-col :span="12">
-              <el-date-picker
-                v-model="formModel.date1"
-                type="date"
-                placeholder="选择日期"
-                style="width: 100%"
-              />
-            </el-col>
-            <el-col :span="12">
-              <el-time-picker
-                v-model="formModel.date2"
-                placeholder="选择时间"
-                style="width: 100%"
-              />
-            </el-col>
+          <el-form-item label="商品单价" prop="price">
+            <el-input-number v-model="formModel.price" />
           </el-form-item>
 
-          <el-form-item label="状态" prop="condition">
-            <el-radio-group v-model="formModel.condition">
+          <!-- <el-form-item label="入库日期" prop="date">
+            <el-date-picker
+              v-model="formModel.date"
+              type="date"
+              placeholder="选择日期"
+              style="width: 50%"
+            />
+          </el-form-item> -->
+
+          <el-form-item label="状态" prop="zt">
+            <el-radio-group v-model="formModel.zt">
               <el-radio label="全新" />
               <el-radio label="二手" />
             </el-radio-group>
           </el-form-item>
 
           <el-form-item label="简要描述">
-            <el-input v-model="formModel.desc" type="textarea" />
+            <el-input v-model="formModel.text" type="textarea" />
           </el-form-item>
 
           <el-form-item>
