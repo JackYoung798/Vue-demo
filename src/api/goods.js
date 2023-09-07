@@ -20,4 +20,4 @@ export const goodsInboundservice = ({
     username
   })
 
-// export const goodsGetInfoService = () => request.get('/Goods/getinfo')
+export const goodsGetInfoService = () => request.get('/goods/get')

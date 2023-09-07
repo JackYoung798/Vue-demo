@@ -1,17 +1,18 @@
 <script setup>
-const tableData = [
-  {
-    id: '1',
-    name: '沙发',
-    region: '家具类',
-    num: '18',
-    price: '180',
-    date1: '123',
-    date2: '123',
-    condition: '全新',
-    desc: '咳咳咳'
-  }
-]
+import { ref } from 'vue'
+import { goodsGetInfoService } from '@/api/goods'
+// import { onMounted } from 'vue'
+// onMounted(() => {
+//   goodsStore.getGoods()
+// })
+
+const tableData = ref([])
+
+const get = async () => {
+  const res = await goodsGetInfoService()
+  tableData.value = res.data.data
+}
+get()
 </script>
 
 <template>
