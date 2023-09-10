@@ -84,6 +84,7 @@ const cancel = () => {
               <el-option label="医药类" value="医药类" />
               <el-option label="食品类" value="食品类" />
               <el-option label="图书类" value="图书类" />
+              <el-option label="其他" value="其他" />
             </el-select>
           </el-form-item>
 
@@ -111,7 +112,7 @@ const cancel = () => {
             </el-radio-group>
           </el-form-item>
 
-          <el-form-item label="简要描述">
+          <el-form-item label="简要描述" prop="text">
             <el-input v-model="formModel.text" type="textarea" />
           </el-form-item>
 
