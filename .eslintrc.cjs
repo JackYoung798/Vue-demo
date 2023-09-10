@@ -20,7 +20,7 @@ module.exports = {
         //无需分号
         semi: false,
         //每行宽度80字符
-        printWidth: 80,
+        printWidth: 100,
         //不加对象|数组最后逗号
         trailingComma: 'none',
         //换行符不限制

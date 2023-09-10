@@ -62,22 +62,13 @@ const cancel = () => {
   <page-container title="仓库管理">
     <el-tabs v-model="activeName" class="demo-tabs">
       <el-tab-pane label="入库操作" name="first">
-        <el-form
-          :rules="rules"
-          ref="form"
-          class="form"
-          :model="formModel"
-          label-width="120px"
-        >
+        <el-form :rules="rules" ref="form" class="form" :model="formModel" label-width="120px">
           <el-form-item label="商品名称" prop="name">
             <el-input v-model="formModel.name" />
           </el-form-item>
 
           <el-form-item label="商品类别" prop="category">
-            <el-select
-              v-model="formModel.category"
-              placeholder="请选择商品类别"
-            >
+            <el-select v-model="formModel.category" placeholder="请选择商品类别">
               <el-option label="家电类" value="家电类" />
               <el-option label="数码类" value="数码类" />
               <el-option label="服饰类" value="服饰类" />

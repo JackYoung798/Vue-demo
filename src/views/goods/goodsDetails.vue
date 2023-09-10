@@ -45,7 +45,7 @@ const drawChart = () => {
   }
   var changeOption = {
     title: {
-      text: '出入口情况'
+      text: '出入库情况'
     },
     tooltip: {
       trigger: 'axis'
@@ -95,7 +95,7 @@ const drawChart = () => {
 <template>
   <page-container title="仓库详情">
     <div class="box">
-      <div id="overview" style="width: 600px; height: 400px"></div>
+      <div id="overview" style="width: 620px; height: 400px"></div>
       <div id="change" style="width: 800px; height: 400px"></div>
     </div>
   </page-container>
